@@ -78,7 +78,7 @@ export async function updateNoticia(id, title, descripcion, esMostrable, imageBa
 }
 
 export async function ocultaNoticia(id) {
-  const res = await fetch(`http://localhost:3001/api/noticias/ocultar-noticia/${id}`, {
+  const res = await fetch(`${BASE_URL}/api/noticias/ocultar-noticia/${id}`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             credentials: "include", 
@@ -104,7 +104,7 @@ export async function autenticado() {
 
 
 export async function cerrarSesion(){
-  await fetch("http://localhost:3001/api/autenticacion/logout", {
+  await fetch(`${BASE_URL}/api/autenticacion/logout`, {
         method: "POST",
         credentials: "include",
       });
